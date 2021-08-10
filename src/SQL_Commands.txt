@@ -1,0 +1,47 @@
+## ADMIN LOG ##
+
+CREATE TABLE adminlog (
+	adminName varchar(20) PRIMARY KEY NOT NULL,
+	adminPassword varchar(20) NOT NULL
+);
+
+
+## STUDET TABLE ##
+
+CREATE TABLE student (
+	StudentID int PRIMARY KEY,
+	StudentName varchar(50) NOT NULL,
+	StudentGender varchar(7) NOT NULL,
+	BloodGrp varchar(3) NOT NULL,
+	DepartmentName varchar(30) NOT NULL,
+	FOREIGN KEY(DepartmentName) REFERENCES department(DepartmentName),
+	StudyStandard int NOT NULL,
+	DOB date NOT NULL,
+	GuardianName varchar(50) NOT NULL,
+	PhoneNumber int NOT NULL UNIQUE,
+	PostalAddress varchar(100) NOT NULL,
+	EmailAddress varchar(50) NOT NULL UNIQUE,
+	Religion varchar(10) NOT NULL,
+	DateOfAdmission date NOT NULL, 
+	YearOfPassOut int NOT NULL	
+);
+
+
+## EXAMINATION ##
+
+
+CREATE TABLE examination (
+	SlNo int PRIMARY KEY,
+	DepartmentID varchar(4)FOREIGN KEY REFERENCES department(DepartmentName),  
+	DateOfExamination date NOT NULL,
+	TimeOfExamination VARCHAR(5) NOT NULL	
+);
+
+
+## DEPARTMENT ##
+
+
+CREATE TABLE department (
+	DepartmentID VARCHAR(4) PRIMARY KEY,
+	DepartmentName varchar(30) NOT NULL UNIQUE
+);
