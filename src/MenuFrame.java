@@ -83,22 +83,22 @@ public class MenuFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
-//        if (e.getSource() == admissionBtn){
-//            new AdmissionFrame(name);
-//            frame2.dispose();
-//        } else if ( e.getSource() == showStudentBtn ){
-//            new DisplayStudentFrame(name);
-//            frame2.dispose();
-//        } else if ( e.getSource() == updateStudentBtn ){
-//            new UpdateStudentFrame(name);
-//            frame2.dispose();
-//        } else if ( e.getSource() == examDateUpdateBtn ){
-//            new UpdateExamFrame(name);
-//            frame2.dispose();
-//        } else if ( e.getSource() == showExamDateBtn ) {
-//            new DisplayExamFrame(name);
-//            frame2.dispose();
-//        }
+        if (e.getSource() == admissionBtn){
+            new AdmissionFrame(name);
+            frame2.dispose();
+        } else if ( e.getSource() == showStudentBtn ){
+            new DisplayStudentFrame(name);
+            frame2.dispose();
+        } else if ( e.getSource() == updateStudentBtn ){
+            new UpdateStudentFrame(name);
+            frame2.dispose();
+        } else if ( e.getSource() == examDateUpdateBtn ){
+            new UpdateExamFrame(name);
+            frame2.dispose();
+        } else if ( e.getSource() == showExamDateBtn ) {
+            new DisplayExamFrame(name);
+            frame2.dispose();
+        }
 
     }
 }
