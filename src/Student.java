@@ -1,7 +1,7 @@
 public class Student {
 
-    String studName, gender, bloodGroup, dept, studyStandard, dob, guardianName,phoneNumber,postalAddress, emailAddress, religion;
-    int idNo, rollNo; // Primary Keys
+    String studName, gender, bloodGroup, dept, studyStandard, dob, guardianName,phoneNumber,postalAddress, emailAddress, religion, dateOfAdmission;
+    int idNo, rollNo, admissionFee, yearOfPassing; // Primary Keys
 
     public void setStudName(String studName) {
         this.studName = studName;
@@ -47,12 +47,24 @@ public class Student {
         this.religion = religion;
     }
 
+    public void setDateOfAdmission(String dateOfAdmission) {
+        this.dateOfAdmission = dateOfAdmission;
+    }
+
     public void setIdNo(int idNo) {
         this.idNo = idNo;
     }
 
     public void setRollNo(int rollNo) {
         this.rollNo = rollNo;
+    }
+
+    public void setAdmissionFee(int admissionFee) {
+        this.admissionFee = admissionFee;
+    }
+
+    public void setYearOfPassing(int yearOfPassing) {
+        this.yearOfPassing = yearOfPassing;
     }
 
     public String getStudName() {
@@ -99,6 +111,10 @@ public class Student {
         return religion;
     }
 
+    public String getDateOfAdmission() {
+        return dateOfAdmission;
+    }
+
     public int getIdNo() {
         return idNo;
     }
@@ -107,6 +123,11 @@ public class Student {
         return rollNo;
     }
 
+    public int getAdmissionFee() {
+        return admissionFee;
+    }
 
-
+    public int getYearOfPassing() {
+        return yearOfPassing;
+    }
 }

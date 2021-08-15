@@ -1,10 +1,9 @@
 Student Class:
+>>	Student ID                              [PRIMARY KEY]
 >>	Name
 >>	Gender
->>	Roll No.
->>	ID No.
 >>  Blood Group
->>	Department
+>>	Department Name                         [FOREIGN KEY]
 >>	Studying Standard(Year for College)
 >>	DOB
 >> 	Guardian Name
@@ -12,23 +11,18 @@ Student Class:
 >>	Postal Address
 >>	Email Address
 >>	Religion
-
-Admission:
->>	ID No.
->>	Name
->>	Gender
->> 	Dept Name
 >> 	Date of Admission
->>	Admission Fee
->>	Tuition Fee [3/4]
 >>  Year of Pass-out
 
 Examination:
->>	Roll No.
->>	Department
+>>  Sl No.                                   [PRIMARY KEY]
+>>	Department ID                            [FOREIGN KEY]
 >>	Date of Examination
 >>	Time of Examination
->>
+
+Department:
+>> Department ID (EE/CSE/etc)                [PRIMARY KEY]
+>> Department Name
 
 Documentation:
 ERD- DBMS [Primary Key -> Single Underline, Foreign Key -> Double Underline ]

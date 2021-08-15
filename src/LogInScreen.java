@@ -74,7 +74,7 @@ public class LogInScreen {
         logInButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                verification(userNameTF.getText(), passwordTF.getPassword());
+                verification(userNameTF.getText(), String.valueOf(passwordTF.getPassword()));
             }
         });
 
@@ -84,18 +84,20 @@ public class LogInScreen {
         new LogInScreen();
     }
 
-    protected void verification(String name, char[] password){
+    protected void verification(String name, String password){
 
         DBConnector db = new DBConnector();
         Connection con = db.connect();
 
-        String sql = "SELECT * FROM admin WHERE password = "+ Arrays.toString(password) +" AND name = '"+name + "'";
+        String sql = "SELECT * FROM adminlog WHERE adminPassword = '"+ password +"' AND adminName = '"+name + "'";
 
         try{
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(sql);
             if (rs.next()){
-                JOptionPane.showMessageDialog(null,"verified");
+//                JOptionPane.showMessageDialog(null,"verified");
+                frame1.dispose();
+                new MenuFrame(userNameTF.getName());
 
             }else {
                 JOptionPane.showMessageDialog(null,"not verified");
