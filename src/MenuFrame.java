@@ -11,21 +11,22 @@ public class MenuFrame implements ActionListener {
 
     JFrame frame2 = new JFrame();
 
-    private Label showAdmin;
-    private Button admissionBtn,  updateStudentBtn, examDateUpdateBtn, showStudentBtn, showExamDateBtn;
+    private JLabel showAdmin;
+    private JButton admissionBtn,  updateStudentBtn, examDateUpdateBtn, showStudentBtn, showExamDateBtn,logOutBtn;
     private  String name;
 
     MenuFrame(String adminName){
 
-        showAdmin = new Label("YOU LOGGED IN AS : " + adminName);
+        showAdmin = new JLabel("YOU LOGGED IN AS : " + adminName);
         name = adminName;
 
-        admissionBtn = new Button("Admission");
+        admissionBtn = new JButton("Admission");
 //        passOutUpdateBtn = new Button("Pass-Out Update");
-        updateStudentBtn = new Button("Update Student");
-        examDateUpdateBtn = new Button("Update Exam Date");
-        showStudentBtn = new Button("Display Student");
-        showExamDateBtn = new Button("Display Exam List");
+        updateStudentBtn = new JButton("Update Student");
+        examDateUpdateBtn = new JButton("Update Exam Date");
+        showStudentBtn = new JButton("Display Student");
+        showExamDateBtn = new JButton("Display Exam List");
+        logOutBtn = new JButton("Log Out");
 
         showAdmin.setFont(font1);
         admissionBtn.setFont(font2);
@@ -34,13 +35,14 @@ public class MenuFrame implements ActionListener {
         examDateUpdateBtn.setFont(font2);
         showStudentBtn.setFont(font2);
         showExamDateBtn.setFont(font2);
+        logOutBtn.setFont(font2);
 
         admissionBtn.setBackground(Color.yellow);
         updateStudentBtn.setBackground(Color.yellow);
         examDateUpdateBtn.setBackground(Color.yellow);
         showStudentBtn.setBackground(Color.yellow);
         showExamDateBtn.setBackground(Color.yellow);
-
+        logOutBtn.setBackground(Color.cyan);
 
         showAdmin.setForeground(Color.yellow);
         admissionBtn.setForeground(Color.RED);
@@ -49,6 +51,7 @@ public class MenuFrame implements ActionListener {
         examDateUpdateBtn.setForeground(Color.RED);
         showStudentBtn.setForeground(Color.RED);
         showExamDateBtn.setForeground(Color.RED);
+        logOutBtn.setForeground(Color.RED);
 
         showAdmin.setBounds(10,10,700,40);
         admissionBtn.setBounds(15,100,160,60);
@@ -57,6 +60,7 @@ public class MenuFrame implements ActionListener {
 //        passOutUpdateBtn.setBounds(10,60,120,60);
         showStudentBtn.setBounds(80,210,170,60);
         showExamDateBtn.setBounds(290,210,170,60);
+        logOutBtn.setBounds(400,300,70,50);
 
         admissionBtn.addActionListener(this);
         updateStudentBtn.addActionListener(this);
@@ -70,6 +74,7 @@ public class MenuFrame implements ActionListener {
         frame2.add(updateStudentBtn);
         frame2.add(examDateUpdateBtn);
         frame2.add(showExamDateBtn);
+        frame2.add(logOutBtn);
 
         frame2.setSize(600,400); //400 width and 500 height
         frame2.getContentPane().setBackground(new Color(100,00,250));
@@ -98,6 +103,7 @@ public class MenuFrame implements ActionListener {
         } else if ( e.getSource() == showExamDateBtn ) {
             new DisplayExamFrame(name);
             frame2.dispose();
+
         }
 
     }

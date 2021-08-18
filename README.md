@@ -31,10 +31,10 @@ ERD- DBMS [Primary Key -> Single Underline, Foreign Key -> Double Underline ]
 DFD- User->SMS->DBMS1
 
 JFrames
->>  LogIn Frame
->>  Option Choice Frame
->>  Admission Details Display Frame
->>  Admission Details Input Frame
+>>  LogIn Frame ***
+>>  Option Choice Frame ***
+>>  Admission Details Input Frame **
+>>  Update Student Details
 >>  Exam Schedule Display Frame
 >>  Exam Schedule Input Frame
 >>  Display Student Details

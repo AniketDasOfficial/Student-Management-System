@@ -32,7 +32,8 @@ CREATE TABLE student (
 
 CREATE TABLE examination (
 	SlNo int PRIMARY KEY,
-	DepartmentID varchar(4)FOREIGN KEY REFERENCES department(DepartmentName),  
+	DepartmentID varchar(4),
+	FOREIGN KEY(DepartmentID) REFERENCES department(DepartmentID),
 	DateOfExamination date NOT NULL,
 	TimeOfExamination VARCHAR(5) NOT NULL	
 );
