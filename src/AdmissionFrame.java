@@ -3,6 +3,9 @@ import javax.swing.text.StyledEditorKit.BoldAction;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class AdmissionFrame {
     JFrame f1 = new JFrame();
@@ -208,13 +211,52 @@ public class AdmissionFrame {
         b1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(e.getSource()==b1){
 
-                }
+
+
             }
         });
 
     }
+
+//    protected void insertion() {
+//        DBConnector con = new DBConnector();
+//        Connection cc = con.connect();
+//
+////		String uId = d;
+//        String sql = "    INSERT INTO `student`(`StudentID`, `StudentName`, `StudentGender`, `BloodGrp`, `DepartmentName`, `StudyStandard`, `DOB`, `GuardianName`, `PhoneNumber`, `PostalAddress`, `EmailAddress`, `Religion`, `DateOfAdmission`, `YearOfPassOut`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)\n";
+//        PreparedStatement ps;
+//        try {
+//            ps = cc.prepareStatement(sql);
+//            ps.setString(1,String.valueOf());
+//            ps.setString(2,);
+//            ps.setString(3,);
+//            ps.setString(4,);
+//            ps.setString(5,);
+//            ps.setString(6,);
+//            ps.setString(7,);
+//            ps.setString(8,);
+//            ps.setString(9,);
+//            ps.setString(10,);
+//            ps.setString(11,);
+//            ps.setString(12,);
+//            ps.setString(13,);
+//            ps.setString(14,);
+//            int rs = ps.executeUpdate();
+//
+//            if(rs >0) {
+//                JOptionPane.showMessageDialog(null, "Exam Date Updated");
+//
+//
+//            }
+//            else {
+//                JOptionPane.showMessageDialog(null, "Try again");
+//            }
+//        }
+//        catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
 //    public static void main(String[] args) {
 //        new AdmissionFrame("Zorbec");

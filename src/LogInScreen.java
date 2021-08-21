@@ -97,7 +97,7 @@ public class LogInScreen {
             if (rs.next()){
 //                JOptionPane.showMessageDialog(null,"verified");
                 frame1.dispose();
-                new MenuFrame(String.valueOf(userNameTF.getName()));
+                new MenuFrame(String.valueOf(userNameTF.getText()));
 
             }else {
                 JOptionPane.showMessageDialog(null,"not verified");

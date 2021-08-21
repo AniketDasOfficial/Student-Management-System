@@ -6,7 +6,7 @@ CREATE TABLE adminlog (
 );
 
 
-## STUDET TABLE ##
+## STUDENT TABLE ##
 
 CREATE TABLE student (
 	StudentID int PRIMARY KEY,
@@ -31,11 +31,9 @@ CREATE TABLE student (
 
 
 CREATE TABLE examination (
-	SlNo int PRIMARY KEY,
-	DepartmentID varchar(4),
+	DepartmentID varchar(4) UNIQUE ,
 	FOREIGN KEY(DepartmentID) REFERENCES department(DepartmentID),
-	DateOfExamination date NOT NULL,
-	TimeOfExamination VARCHAR(5) NOT NULL	
+	DateOfExamination date NOT NULL
 );
 
 

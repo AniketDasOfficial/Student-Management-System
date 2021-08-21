@@ -5,7 +5,8 @@ import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-public class UpdateExamFrame implements ActionListener {
+
+public class UpdateExamFrame {
 
     Font font1 = new Font(Font.MONOSPACED,Font.BOLD,25);
     Font font2 = new Font(Font.SANS_SERIF,Font.BOLD,18);
@@ -67,7 +68,8 @@ public class UpdateExamFrame implements ActionListener {
 			    department = String.valueOf(departmentBox.getItemAt(departmentBox.getSelectedIndex()));
      		    edate = String.valueOf(dateField.getText());
 	    		frame3.dispose();
-    		    insertion();
+	    		insertion();
+                new MenuFrame(adminName);
 //                updateExamDate.setText("working");
             }
         });
@@ -80,26 +82,23 @@ public class UpdateExamFrame implements ActionListener {
         frame3.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 
-//	public void actionPerformed(ActionEvent e)
-//	{
-//		
-//	}
 
     protected void insertion() {
         DBConnector con = new DBConnector();
         Connection cc = con.connect();
 
 //		String uId = d;
-        String sql = "INSERT INTO examination VALUES (?,?)";
+        String sql = "UPDATE `examination` SET `DateOfExamination`= ? WHERE `DepartmentID`= ?";
         PreparedStatement ps;
         try {
             ps = cc.prepareStatement(sql);
-            ps.setString(1, department);
-            ps.setString(2, edate);
+            ps.setString(1, edate);
+            ps.setString(2, department);
             int rs = ps.executeUpdate();
 
             if(rs >0) {
                 JOptionPane.showMessageDialog(null, "Exam Date Updated");
+
 
             }
             else {
@@ -111,16 +110,16 @@ public class UpdateExamFrame implements ActionListener {
         }
     }
 
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
-        new UpdateExamFrame("anirban");
+//    public static void main(String[] args) {
+//        // TODO Auto-generated method stub
+//        new UpdateExamFrame("anirban");
+//
+//    }
 
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
-
-    }
+//    @Override
+//    public void actionPerformed(ActionEvent e) {
+//        // TODO Auto-generated method stub
+//
+//    }
 
 }

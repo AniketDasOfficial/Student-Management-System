@@ -23,7 +23,7 @@ public class MenuFrame implements ActionListener {
         admissionBtn = new JButton("Admission");
 //        passOutUpdateBtn = new Button("Pass-Out Update");
         updateStudentBtn = new JButton("Update Student");
-        examDateUpdateBtn = new JButton("Update Exam Date");
+        examDateUpdateBtn = new JButton("Update Exam ");
         showStudentBtn = new JButton("Display Student");
         showExamDateBtn = new JButton("Display Exam List");
         logOutBtn = new JButton("Log Out");
@@ -54,19 +54,20 @@ public class MenuFrame implements ActionListener {
         logOutBtn.setForeground(Color.RED);
 
         showAdmin.setBounds(10,10,700,40);
-        admissionBtn.setBounds(15,100,160,60);
-        updateStudentBtn.setBounds(215,100,160,60);
-        examDateUpdateBtn.setBounds(415,100,160,60);
+        admissionBtn.setBounds(15,100,180,60);
+        updateStudentBtn.setBounds(215,100,180,60);
+        examDateUpdateBtn.setBounds(415,100,180,60);
 //        passOutUpdateBtn.setBounds(10,60,120,60);
-        showStudentBtn.setBounds(80,210,170,60);
-        showExamDateBtn.setBounds(290,210,170,60);
-        logOutBtn.setBounds(400,300,70,50);
+        showStudentBtn.setBounds(80,210,180,60);
+        showExamDateBtn.setBounds(290,210,180,60);
+        logOutBtn.setBounds(450,300,100,50);
 
         admissionBtn.addActionListener(this);
         updateStudentBtn.addActionListener(this);
         examDateUpdateBtn.addActionListener(this);
         showStudentBtn.addActionListener(this);
         showExamDateBtn.addActionListener(this);
+        logOutBtn.addActionListener(this);
 
         frame2.add(showAdmin);
         frame2.add(admissionBtn);
@@ -76,7 +77,7 @@ public class MenuFrame implements ActionListener {
         frame2.add(showExamDateBtn);
         frame2.add(logOutBtn);
 
-        frame2.setSize(600,400); //400 width and 500 height
+        frame2.setSize(625,400); //400 width and 500 height
         frame2.getContentPane().setBackground(new Color(100,00,250));
         frame2.setLayout(null);//using no layout managers
         frame2.setVisible(true);//making the frame visible
@@ -103,7 +104,9 @@ public class MenuFrame implements ActionListener {
         } else if ( e.getSource() == showExamDateBtn ) {
             new DisplayExamFrame(name);
             frame2.dispose();
-
+        } else if (e.getSource() == logOutBtn){
+            frame2.dispose();
+            JOptionPane.showMessageDialog(null,"Logged Out");
         }
 
     }
