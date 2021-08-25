@@ -15,14 +15,14 @@ CREATE TABLE student (
 	BloodGrp varchar(3) NOT NULL,
 	DepartmentID varchar(30) NOT NULL,
 	FOREIGN KEY(DepartmentID) REFERENCES department(DepartmentID),
-	StudyStandard int NOT NULL,
-	DOB date NOT NULL,
+	StudyStandard varchar(5) NOT NULL,
+	DOB varchar(11) NOT NULL,
 	GuardianName varchar(50) NOT NULL,
-	PhoneNumber int NOT NULL UNIQUE,
+	PhoneNumber varchar(12) NOT NULL UNIQUE,
 	PostalAddress varchar(100) NOT NULL,
 	EmailAddress varchar(50) NOT NULL UNIQUE,
-	Religion varchar(10) NOT NULL,
-	DateOfAdmission date NOT NULL, 
+	Religion varchar(12) NOT NULL,
+	DateOfAdmission varchar(11) NOT NULL,
 	YearOfPassOut int NOT NULL	
 );
 

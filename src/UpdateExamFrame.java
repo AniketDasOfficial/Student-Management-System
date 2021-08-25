@@ -67,7 +67,7 @@ public class UpdateExamFrame {
                 // TODO Auto-generated method stub
 			    department = String.valueOf(departmentBox.getItemAt(departmentBox.getSelectedIndex()));
      		    edate = String.valueOf(dateField.getText());
-	    		frame3.dispose();
+
 	    		insertion();
                 new MenuFrame(adminName);
 //                updateExamDate.setText("working");
@@ -98,7 +98,7 @@ public class UpdateExamFrame {
 
             if(rs >0) {
                 JOptionPane.showMessageDialog(null, "Exam Date Updated");
-
+                frame3.dispose();
 
             }
             else {
