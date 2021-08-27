@@ -10,15 +10,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 public class DisplayExamFrame {
 
-    Font font1 = new Font(Font.MONOSPACED,Font.BOLD,25);
-    Font font2 = new Font(Font.SANS_SERIF,Font.BOLD,18);
-    Font font3 = new Font(Font.DIALOG_INPUT,Font.BOLD,15);
+    Font font1 = new Font(Font.MONOSPACED,Font.BOLD,30);
+    Font font2 = new Font(Font.DIALOG_INPUT, Font.BOLD,15);
 
     JFrame frame4 = new JFrame();
 
     JTable table;
     private JComboBox departmentBox;
-    private JButton ok;
+    private JButton homeButton;
     private JLabel departmentLabel;
     JLabel showAdmin;
     String name;
@@ -27,32 +26,40 @@ public class DisplayExamFrame {
 
     public DisplayExamFrame(String adminName) {
 
-        showAdmin = new JLabel("YOU LOGGED IN AS : " + adminName);
-        name = adminName;
+//        showAdmin = new JLabel("YOU LOGGED IN AS : " + adminName);
+//        name = adminName;
 
-//        departmentLabel = new JLabel("Department Name :");
-//        departmentBox = new JComboBox(Option);
-        ok = new JButton("Home");
-
-        showAdmin.setFont(font1);
-        showAdmin.setForeground(Color.yellow);
-        showAdmin.setBounds(10,10,700,40);
+        JLabel frameLabel_1 = new JLabel("EXAM DATE LIST");
+        JLabel frameLabel_2 = new JLabel("EXAM DATE LIST");
+        homeButton = new JButton("Home");
         table = new JTable();
 
-        table.setBounds(10, 60, 460, 95);
-        frame4.add(showAdmin);
+        frameLabel_1.setFont(font1);
+        frameLabel_2.setFont(font1);
+        table.setFont(font2);
+
+        frameLabel_1.setForeground(new Color(255, 166, 0));
+        frameLabel_2.setForeground(new Color(248, 238, 31));
+        table.setBackground(Color.cyan);
+
+        frameLabel_1.setBounds(118,1,300,50);
+        frameLabel_2.setBounds(120,3,300,50);
+        table.setBounds(1, 60, 500, 95);
+        homeButton.setBounds(150,200,150,30);
+
+        frame4.add(frameLabel_1);
+        frame4.add(frameLabel_2);
         frame4.add(table);
-//        frame4.add(departmentLabel);
-//        frame4.add(departmentBox);
-        frame4.add(ok);
-//
-//        departmentLabel.setBounds(60,130,150,30);
-//        departmentBox.setBounds(230,130,150,30);
-        ok.setBounds(150,200,150,30);
+        frame4.add(homeButton);
 
-        ok.addActionListener(new ActionListener() {
+        frame4.setSize(500,300); //400 width and 500 height
+        frame4.getContentPane().setBackground(new Color(100,00,250));
+        frame4.setLayout(null); //using no layout managers
+        frame4.setVisible(true); //making the frame visible
+        frame4.setResizable(false);
+        frame4.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-
+        homeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
@@ -74,14 +81,6 @@ public class DisplayExamFrame {
             table.setModel(DbUtils.resultSetToTableModel(rs));
 
         }catch(Exception ignored) {}
-
-
-        frame4.setSize(500,300); //400 width and 500 height
-        frame4.getContentPane().setBackground(new Color(100,00,250));
-        frame4.setLayout(null); //using no layout managers
-        frame4.setVisible(true); //making the frame visible
-        frame4.setResizable(false);
-        frame4.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
     }
 

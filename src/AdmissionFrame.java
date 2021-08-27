@@ -5,14 +5,13 @@ import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.LinkedList;
+// import java.util.LinkedList;
 
-// import java.util.ArrayList;
+import java.util.ArrayList;
 
 public class AdmissionFrame {
 
-    LinkedList<Integer> zg = new LinkedList<>();
-
+    // ArrayList<Integer> al = new ArrayList<Integer>();
 
     JFrame f1 = new JFrame();
     private JLabel l, l0, l00, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14;
@@ -24,9 +23,9 @@ public class AdmissionFrame {
     int no1, no2;
     // private String admin;
 
-    // public static void main(String args[]) {
-    //         new AdmissionFrame("Hritick");
-    // }
+    public static void main(String args[]) {
+        new AdmissionFrame("Hritick");
+    }
 
     AdmissionFrame(String adminName) {
 
@@ -56,6 +55,12 @@ public class AdmissionFrame {
         tf1.setFont(h2);
         tf1.setBackground(new Color(220, 220, 250));
         tf1.setBounds(290, 130, 310, 35);
+
+        // tf1.setText(String.valueOf(al.size() + 1));
+        // tf1.setText(String.valueOf(Integer.parseInt(new LastEnteredStudentID()) +
+        // 1));
+        tf1.setText(String.valueOf(new LastEnteredStudentID().verification() + 1));
+        tf1.setEditable(false);
 
         l2 = new JLabel("Student Name : ");
         l2.setForeground(new Color(153, 255, 255));
@@ -115,9 +120,8 @@ public class AdmissionFrame {
         l8.setForeground(new Color(153, 255, 255));
         l8.setFont(h1);
         l8.setBounds(710, 340, 350, 35);
-        String country3[] = { "DD", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12",
-                "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26",
-                "27", "28", "29", "30", "31" };
+        String country3[] = { "DD", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14",
+                "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" };
         cd4 = new JComboBox(country3);
         cd4.setFont(h2);
         cd4.setBounds(900, 340, 90, 35);
@@ -126,10 +130,10 @@ public class AdmissionFrame {
         cm4 = new JComboBox(country4);
         cm4.setFont(h2);
         cm4.setBounds(990, 340, 100, 35);
-        String country5[] = { "YYYY", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003",
-                "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014",
-                "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025",
-                "2026", "2027", "2028", "2029", "2030" };
+        String country5[] = { "YYYY", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004",
+                "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017",
+                "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029",
+                "2030" };
         cy4 = new JComboBox(country5);
         cy4.setFont(h2);
         cy4.setBounds(1090, 340, 120, 35);
@@ -165,9 +169,8 @@ public class AdmissionFrame {
         l12.setForeground(new Color(153, 255, 255));
         l12.setFont(h1);
         l12.setBounds(25, 615, 350, 35);
-        String country7[] = { "DD", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12",
-                "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26",
-                "27", "28", "29", "30", "31" };
+        String country7[] = { "DD", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14",
+                "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" };
         cd7 = new JComboBox(country7);
         cd7.setFont(h2);
         cd7.setBounds(290, 615, 90, 35);
@@ -176,8 +179,8 @@ public class AdmissionFrame {
         cm7 = new JComboBox(country8);
         cm7.setFont(h2);
         cm7.setBounds(380, 615, 100, 35);
-        String country9[] = { "YYYY",  "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025",
-                "2026", "2027", "2028", "2029", "2030" };
+        String country9[] = { "YYYY", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022",
+                "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030" };
         cy7 = new JComboBox(country9);
         cy7.setFont(h2);
         cy7.setBounds(480, 615, 120, 35);
@@ -200,8 +203,7 @@ public class AdmissionFrame {
         // tf13.setBackground(new Color(220, 220, 250));
         // tf13.setFont(h2);
         // tf13.setBounds(900, 560, 310, 35);
-        String country11[] = { "Choose Your Religion", "Hinduism", "Islam", "Cristianity", "Buddhism",
-                "Others" };
+        String country11[] = { "Choose Your Religion", "Hinduism", "Islam", "Cristianity", "Buddhism", "Others" };
         c8 = new JComboBox(country11);
         c8.setFont(h2);
         c8.setBounds(900, 560, 310, 35);
@@ -278,8 +280,13 @@ public class AdmissionFrame {
     }
 
     protected void insertion() {
+
         DBConnector con = new DBConnector();
         Connection cc = con.connect();
+
+        // DBConnector db = new DBConnector();
+        // Connection con = db.connect();
+
         // no1 = Integer.parseInt(String.valueOf(c3.getItemAt(c3.getSelectedIndex())));
         no2 = Integer.parseInt(String.valueOf(c6.getItemAt(c6.getSelectedIndex())));
         // String uId = d;
@@ -378,13 +385,11 @@ public class AdmissionFrame {
                 + String.valueOf(c5.getItemAt(c5.getSelectedIndex())) + "', '"
                 + String.valueOf(c2.getItemAt(c2.getSelectedIndex())) + "', '"
                 + String.valueOf(c3.getItemAt(c3.getSelectedIndex())) + "', '"
-                + String.valueOf(cd4.getSelectedItem() + "/" + cm4.getSelectedItem() + "/"
-                + cy4.getSelectedItem())
+                + String.valueOf(cd4.getSelectedItem() + "/" + cm4.getSelectedItem() + "/" + cy4.getSelectedItem())
                 + "', '" + String.valueOf(tf3.getText()) + "', " + Long.parseLong(tf9.getText()) + ", '"
                 + String.valueOf(ta1.getText()) + "', '" + String.valueOf(tf8.getText()) + "', '"
                 + String.valueOf(c8.getItemAt(c8.getSelectedIndex())) + "', '"
-                + String.valueOf(cd7.getSelectedItem() + "/" + cm7.getSelectedItem() + "/"
-                + cy7.getSelectedItem())
+                + String.valueOf(cd7.getSelectedItem() + "/" + cm7.getSelectedItem() + "/" + cy7.getSelectedItem())
                 + "', " + no2 + ")";
         System.out.println(sql);
 
@@ -394,6 +399,16 @@ public class AdmissionFrame {
             ps = cc.prepareStatement(sql);
 
             int rs = ps.executeUpdate();
+
+            // Statement st = con.createStatement();
+
+            // ResultSet rs = st.executeQuery(sql);
+
+            // Statement st = cc.createStatement();
+
+            // ResultSet rss = st.executeQuery(sql);
+
+            // ResultSet rss = ps.executeQuery(sql);
 
             /*
              * ps = cc.prepareStatement(sql);
@@ -446,7 +461,12 @@ public class AdmissionFrame {
         }
     }
 
-    public static void main(String[] args) {
-        new AdmissionFrame("Zorbec");
-    }
+    // protected int StudentLastEntered(){
+    // // System.out.println(new LastEnteredStudentID());
+    // return (new LastEnteredStudentID()+1);
+    // }
+
+    // public static void main(String[] args) {
+    // new AdmissionFrame("Zorbec");
+    // }
 }

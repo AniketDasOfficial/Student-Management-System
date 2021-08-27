@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.plaf.metal.MetalIconFactory;
 
 import net.proteanit.sql.DbUtils;
 
@@ -11,15 +12,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 public class DisplayStudentFrame {
 
-    Font font1 = new Font(Font.MONOSPACED,Font.BOLD,25);
+    Font font1 = new Font(Font.MONOSPACED,Font.BOLD,20);
     Font font2 = new Font(Font.SANS_SERIF,Font.BOLD,18);
-    Font font3 = new Font(Font.DIALOG_INPUT,Font.BOLD,15);
+    Font font3 = new Font(Font.DIALOG_INPUT,Font.BOLD,50);
+    Font font4 = new Font(Font.SANS_SERIF,Font.BOLD,9);
 
     JFrame frame6 = new JFrame();
 
     JTable table;
     private JComboBox departmentBox;
-    private JButton ok;
+    private JButton ok,homeButton;
     private JLabel departmentLabel;
 
     JLabel showAdmin;
@@ -34,7 +36,8 @@ public class DisplayStudentFrame {
 
         departmentLabel = new JLabel("Department Name :");
         departmentBox = new JComboBox(Option);
-        ok = new JButton("OK");
+        ok = new JButton("SUBMIT");
+        homeButton = new JButton("HOME");
 
         showAdmin.setFont(font1);
         showAdmin.setForeground(Color.yellow);
@@ -44,12 +47,15 @@ public class DisplayStudentFrame {
         frame6.add(departmentLabel);
         frame6.add(departmentBox);
         frame6.add(ok);
+        frame6.add(homeButton);
 
-        departmentLabel.setBounds(50,120,200,50);
         departmentLabel.setForeground(new Color(255, 255, 255));
         departmentLabel.setFont(font2);
-        departmentBox.setBounds(230,130,150,30);
-        ok.setBounds(165,230,150,30);
+
+        departmentLabel.setBounds(60,120,200,50);
+        departmentBox.setBounds(265,130,150,30);
+        ok.setBounds(60,230,150,30);
+        homeButton.setBounds(265,230,150,30);
 
         ok.addActionListener(new ActionListener() {
 
@@ -75,15 +81,32 @@ public class DisplayStudentFrame {
     {
         JFrame frame7 = new JFrame();
 
+        JLabel frameLabel_1 = new JLabel("STUDENT LIST");
+        JLabel frameLabel_2 = new JLabel("STUDENT LIST");
+
+        frameLabel_1.setFont(font3);
+        frameLabel_2.setFont(font3);
+
+        frameLabel_1.setForeground(new Color(255, 166, 0));
+        frameLabel_2.setForeground(new Color(248, 238, 31));
+
+        frameLabel_1.setBounds(550,0,500,145);
+        frameLabel_2.setBounds(552,2,500,145);
+
+        frame7.add(frameLabel_1);
+        frame7.add(frameLabel_2);
+
         table = new JTable();
 
-        table.setBounds(10, 100, 1500, 130);
+        table.setBounds(1, 150, 1550, 2000);
 
-
+        table.setBackground(Color.cyan);
+        
+        table.setFont(font4);
 
         frame7.add(table);
 
-        frame7.setSize(1530,400); //400 width and 500 height
+        frame7.setSize(1590,500); //400 width and 500 height
         frame7.getContentPane().setBackground(new Color(107, 0, 255));
         frame7.setLayout(null); //using no layout managers
         frame7.setVisible(true); //making the frame visible
@@ -104,19 +127,19 @@ public class DisplayStudentFrame {
         }catch( Exception e) {
             e.printStackTrace();
         }
+
         table.getColumnModel().getColumn(0).setPreferredWidth(1);
         table.getColumnModel().getColumn(1).setPreferredWidth(8);
-         table.getColumnModel().getColumn(2).setPreferredWidth(5);
-         table.getColumnModel().getColumn(3).setPreferredWidth(1);
-         table.getColumnModel().getColumn(4).setPreferredWidth(1);
-         table.getColumnModel().getColumn(5).setPreferredWidth(1);
-         table.getColumnModel().getColumn(7).setPreferredWidth(8);
-         table.getColumnModel().getColumn(11).setPreferredWidth(1);
-         table.getColumnModel().getColumn(12).setPreferredWidth(1);
-         table.getColumnModel().getColumn(13).setPreferredWidth(1);
-         table.getColumnModel().getColumn(6).setPreferredWidth(4);
-         table.getColumnModel().getColumn(8).setPreferredWidth(4);
-//         table.getColumnModel().getColumn(0).setPreferredWidth(5);
+        table.getColumnModel().getColumn(2).setPreferredWidth(5);
+        table.getColumnModel().getColumn(3).setPreferredWidth(1);
+        table.getColumnModel().getColumn(4).setPreferredWidth(1);
+        table.getColumnModel().getColumn(5).setPreferredWidth(1);
+        table.getColumnModel().getColumn(7).setPreferredWidth(8);
+        table.getColumnModel().getColumn(11).setPreferredWidth(1);
+        table.getColumnModel().getColumn(12).setPreferredWidth(1);
+        table.getColumnModel().getColumn(13).setPreferredWidth(1);
+        table.getColumnModel().getColumn(6).setPreferredWidth(4);
+        table.getColumnModel().getColumn(8).setPreferredWidth(4);
 
     }
 
