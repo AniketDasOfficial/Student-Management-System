@@ -55,6 +55,8 @@ public class UpdateExamFrame {
         departmentLabel.setForeground(new Color(250,250,250));
         dateLabel.setForeground(new Color(250,250,250));
 
+        departmentBox.setBackground(new Color(220, 220, 250));
+
         updateExamDate.setFont(font2);
         departmentLabel.setFont(font3);
         dateLabel.setFont(font3);

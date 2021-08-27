@@ -47,6 +47,8 @@ public class DisplayStudentFrame {
         departmentLabel.setForeground(new Color(255, 255, 255));
         departmentLabel.setFont(font2);
 
+        departmentBox.setBackground(new Color(220, 220, 250));
+
         departmentLabel.setBounds(60,120,200,50);
         departmentBox.setBounds(265,130,150,30);
         ok.setBounds(60,230,150,30);

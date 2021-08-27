@@ -586,6 +586,7 @@ public class UpdateStudentFrame {
             } else {
                 JOptionPane.showMessageDialog(null, "Something went wrong, try again");
             }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
