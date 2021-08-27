@@ -5,27 +5,22 @@ import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-// import java.util.LinkedList;
 
 import java.util.ArrayList;
 
 public class AdmissionFrame {
 
-    // ArrayList<Integer> al = new ArrayList<Integer>();
 
     JFrame f1 = new JFrame();
     private JLabel l, l0, l00, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14;
-    private JTextField tf1, tf2, tf3, tf4, tf7, tf8, tf9, tf10, tf11, tf12, tf13, tf14;
+    private JTextField tf1, tf2, tf3, tf8, tf9;
     private JComboBox c1, c2, c3, cd4, cm4, cy4, c5, c6, cd7, cm7, cy7, c8;
     private JButton b1;
     private TextArea ta1;
-    String c4, c7;
-    int no1, no2;
-    // private String admin;
+    int no2;
 
-    public static void main(String args[]) {
-        new AdmissionFrame("Hritick");
-    }
+
+
 
     AdmissionFrame(String adminName) {
 
@@ -56,9 +51,6 @@ public class AdmissionFrame {
         tf1.setBackground(new Color(220, 220, 250));
         tf1.setBounds(290, 130, 310, 35);
 
-        // tf1.setText(String.valueOf(al.size() + 1));
-        // tf1.setText(String.valueOf(Integer.parseInt(new LastEnteredStudentID()) +
-        // 1));
         tf1.setText(String.valueOf(new LastEnteredStudentID().verification() + 1));
         tf1.setEditable(false);
 
@@ -284,100 +276,8 @@ public class AdmissionFrame {
         DBConnector con = new DBConnector();
         Connection cc = con.connect();
 
-        // DBConnector db = new DBConnector();
-        // Connection con = db.connect();
-
-        // no1 = Integer.parseInt(String.valueOf(c3.getItemAt(c3.getSelectedIndex())));
         no2 = Integer.parseInt(String.valueOf(c6.getItemAt(c6.getSelectedIndex())));
-        // String uId = d;
-        // String sql = " INSERT INTO `student`(`StudentID`, `StudentName`,
-        // `StudentGender`, `BloodGrp`, `DepartmentName`, `StudyStandard`, `DOB`,
-        // `GuardianName`, `PhoneNumber`, `PostalAddress`, `EmailAddress`, `Religion`,
-        // `DateOfAdmission`, `YearOfPassOut`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)\n";
-        // String sql = " INSERT INTO `student`(`StudentID`, `StudentName`,
-        // `StudentGender`, `BloodGrp`, `DepartmentID`, `StudyStandard`, `DOB`,
-        // `GuardianName`, `PhoneNumber`, `PostalAddress`, `EmailAddress`, `Religion`,
-        // `DateOfAdmission`, `YearOfPassOut`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
-        // ?, ?, ?)";
-        // String sql = " INSERT INTO `student`(`StudentID`, `StudentName`,
-        // `StudentGender`, `BloodGrp`, `DepartmentID`, `StudyStandard`, `DOB`,
-        // `GuardianName`, `PhoneNumber`, `PostalAddress`, `EmailAddress`, `Religion`,
-        // `DateOfAdmission`, `YearOfPassOut`) VALUES (1, 'Hritick Nayak', 'Male', 'O+',
-        // 'EE', 2, '09/05/2000', 'Manas Kumar Nayak', 1234567895, '9/99-E, Haldia',
-        // 'hritick@gmail.com', 'Hindu', '09/20/2018', 2021)";
-        // String sql = " INSERT INTO `student`(`StudentID`, `StudentName`,
-        // `StudentGender`, `BloodGrp`, `DepartmentID`, `StudyStandard`, `DOB`,
-        // `GuardianName`, `PhoneNumber`, `PostalAddress`, `EmailAddress`, `Religion`,
-        // `DateOfAdmission`, `YearOfPassOut`) VALUES
-        // ("+Integer.parseInt(tf1.getText())+", 'Hritick Nayak', 'Male', 'O+', 'EE', "
-        // + 2 i.e no1 + ", '09/05/2000', 'Manas Kumar Nayak', " +
-        // Integer.parseInt(tf1.getText()) + ", '9/99-E', 'Haldia', 'hritick@gmail.com',
-        // 'Hindu', '09/20/2018', " + no2 + ")";
 
-        // String sql = " INSERT INTO `student`(`StudentID`, `StudentName`,
-        // `StudentGender`, `BloodGrp`, `DepartmentID`, `StudyStandard`, `DOB`,
-        // `GuardianName`, `PhoneNumber`, `PostalAddress`, `EmailAddress`, `Religion`,
-        // `DateOfAdmission`, `YearOfPassOut`) VALUES
-        // ("+Integer.parseInt(tf1.getText())+", ?, ?, ?, ?, " + no1 + ", ?, ?, " +
-        // Integer.parseInt(tf9.getText()) + ", ?, ?, ?, ?, " + no2 + ")";
-
-        // String sql = " INSERT INTO `student`(`StudentID`, `StudentName`,
-        // `StudentGender`, `BloodGrp`, `DepartmentID`, `StudyStandard`, `DOB`,
-        // `GuardianName`, `PhoneNumber`, `PostalAddress`, `EmailAddress`, `Religion`,
-        // `DateOfAdmission`, `YearOfPassOut`) VALUES
-        // ("+Integer.parseInt(tf1.getText())+", ?, ?, ?, ?, ?, ?, ?, " +
-        // Integer.parseInt(tf9.getText()) + ", ?, ?, ?, ?, " + no2 + ")/n";
-        // System.out.println(sql);
-
-        // String sql = " INSERT INTO `student`(`StudentID`, `StudentName`,
-        // `StudentGender`, `BloodGrp`, `DepartmentID`, `StudyStandard`, `DOB`,
-        // `GuardianName`, `PhoneNumber`, `PostalAddress`, `EmailAddress`, `Religion`,
-        // `DateOfAdmission`, `YearOfPassOut`) VALUES (" +
-        // Integer.parseInt(tf1.getText())+", '" + String.valueOf(tf2.getText()) + "',
-        // '" + String.valueOf(c1.getItemAt(c1.getSelectedIndex())) + "', '" +
-        // String.valueOf(c5.getItemAt(c5.getSelectedIndex())) + "', '" +
-        // String.valueOf(c2.getItemAt(c2.getSelectedIndex())) + "', '" +
-        // String.valueOf(c2.getItemAt(c2.getSelectedIndex())) + "', '" +
-        // String.valueOf(c3.getItemAt(c3.getSelectedIndex())) + "', '" +
-        // String.valueOf(cd4.getSelectedItem() + " / " + cm4.getSelectedItem() + " / "
-        // + cy4.getSelectedItem()) + "', '" + String.valueOf(tf3.getText()) + "', " +
-        // Integer.parseInt(tf9.getText()) + ", '" + String.valueOf(ta1.getText()) + "',
-        // '" + String.valueOf(tf8.getText()) + "', '" +
-        // String.valueOf(c8.getItemAt(c8.getSelectedIndex())) + "', '" +
-        // String.valueOf(cd7.getSelectedItem() + " / " + cm7.getSelectedItem() + " / "
-        // + cy7.getSelectedItem()) + "', " + no2 + ")/n";
-
-        // String sql = " INSERT INTO `student`(`StudentID`, `StudentName`,
-        // `StudentGender`, `BloodGrp`, `DepartmentID`, `StudyStandard`, `DOB`,
-        // `GuardianName`, `PhoneNumber`, `PostalAddress`, `EmailAddress`, `Religion`,
-        // `DateOfAdmission`, `YearOfPassOut`) VALUES (" +
-        // Integer.parseInt(tf1.getText())+", '" + String.valueOf(tf2.getText()) + "',
-        // '" + String.valueOf(c1.getItemAt(c1.getSelectedIndex())) + "', '" +
-        // String.valueOf(c5.getItemAt(c5.getSelectedIndex())) + "', '" +
-        // String.valueOf(c2.getItemAt(c2.getSelectedIndex())) + "', '" +
-        // String.valueOf(c3.getItemAt(c3.getSelectedIndex())) + "', '" +
-        // String.valueOf(cd4.getSelectedItem() + " / " + cm4.getSelectedItem() + " / "
-        // + cy4.getSelectedItem()) + "', '" + String.valueOf(tf3.getText()) + "', " +
-        // Long.parseLong(tf9.getText()) + ", '" + String.valueOf(ta1.getText()) + "',
-        // '" + String.valueOf(tf8.getText()) + "', '" +
-        // String.valueOf(c8.getItemAt(c8.getSelectedIndex())) + "', '" +
-        // String.valueOf(cd7.getSelectedItem() + " / " + cm7.getSelectedItem() + " / "
-        // + cy7.getSelectedItem()) + "', " + no2 + ")";
-
-        // String sql = " INSERT INTO `student`(`StudentID`, `StudentName`,
-        // `StudentGender`, `BloodGrp`, `DepartmentID`, `StudyStandard`, `DOB`,
-        // `GuardianName`, `PhoneNumber`, `PostalAddress`, `EmailAddress`, `Religion`,
-        // `DateOfAdmission`, `YearOfPassOut`) VALUES (12, 'fdfb', 'Male', 'O+', 'EE',
-        // '2nd', 'DD / MM / YYYY', 'gngfn', 1234567897, 'ytjuty', 'ryghrtyhrtjtyjtyj',
-        // 'Choose Your Religion', 'DD / MM / YYYY', 2000)";
-
-        // String sql = " INSERT INTO `student`(`StudentID`, `StudentName`,
-        // `StudentGender`, `BloodGrp`, `DepartmentID`, `StudyStandard`, `DOB`,
-        // `GuardianName`, `PhoneNumber`, `PostalAddress`, `EmailAddress`, `Religion`,
-        // `DateOfAdmission`, `YearOfPassOut`) VALUES (1, 'Hritick Nayak', 'Male', 'O+',
-        // 'EE', '2', '09/05/2000', 'Manas Kumar Nayak', 1234567895, '9/99-E, Haldia',
-        // 'hritick@gmail.com', 'Hindu', '09/20/2018', 2021)";
-        // System.out.println(sql);
 
         String sql = " INSERT INTO `student`(`StudentID`, `StudentName`, `StudentGender`, `BloodGrp`, `DepartmentID`, `StudyStandard`, `DOB`, `GuardianName`, `PhoneNumber`, `PostalAddress`, `EmailAddress`, `Religion`, `DateOfAdmission`, `YearOfPassOut`) VALUES ("
                 + Integer.parseInt(tf1.getText()) + ", '" + String.valueOf(tf2.getText()) + "', '"
@@ -400,55 +300,6 @@ public class AdmissionFrame {
 
             int rs = ps.executeUpdate();
 
-            // Statement st = con.createStatement();
-
-            // ResultSet rs = st.executeQuery(sql);
-
-            // Statement st = cc.createStatement();
-
-            // ResultSet rss = st.executeQuery(sql);
-
-            // ResultSet rss = ps.executeQuery(sql);
-
-            /*
-             * ps = cc.prepareStatement(sql);
-             *
-             * // ps.setString(1, String.valueOf(tf1.getText())); ps.setString(1,
-             * String.valueOf(tf2.getText())); ps.setString(2,
-             * String.valueOf(c1.getItemAt(c1.getSelectedIndex()))); ps.setString(3,
-             * String.valueOf(c5.getItemAt(c5.getSelectedIndex()))); ps.setString(4,
-             * String.valueOf(c2.getItemAt(c2.getSelectedIndex()))); ps.setString(5,
-             * String.valueOf(c3.getItemAt(c3.getSelectedIndex()))); // ps.setString(7,
-             * String.valueOf(c4)); ps.setString(6, String.valueOf(cd4.getSelectedItem() +
-             * " / " + cm4.getSelectedItem() + " / " + cy4.getSelectedItem()));
-             * ps.setString(7, String.valueOf(tf3.getText())); // ps.setString(9,
-             * String.valueOf(tf9.getText())); ps.setString(8,
-             * String.valueOf(ta1.getText())); ps.setString(9,
-             * String.valueOf(tf8.getText())); ps.setString(10,
-             * String.valueOf(c8.getItemAt(c8.getSelectedIndex()))); // ps.setString(13,
-             * String.valueOf(c7)); ps.setString(11, String.valueOf(cd7.getSelectedItem() +
-             * " / " + cm7.getSelectedItem() + " / " + cy7.getSelectedItem())); //
-             * ps.setString(14, String.valueOf(c6.getItemAt(c6.getSelectedIndex())));
-             *
-             * // Initial Phase ----> // ps.setString(1, String.valueOf(tf1.getText()));
-             * ps.setString(2, String.valueOf(tf2.getText())); ps.setString(3,
-             * String.valueOf(c1.getItemAt(c1.getSelectedIndex()))); ps.setString(4,
-             * String.valueOf(c5.getItemAt(c5.getSelectedIndex()))); ps.setString(5,
-             * String.valueOf(c2.getItemAt(c2.getSelectedIndex()))); // ps.setString(6,
-             * String.valueOf(c3.getItemAt(c3.getSelectedIndex()))); // ps.setString(7,
-             * String.valueOf(c4)); ps.setString(7, String.valueOf(cd4.getSelectedItem() +
-             * " / " + cm4.getSelectedItem() + " / " + cy4.getSelectedItem()));
-             * ps.setString(8, String.valueOf(tf3.getText())); // ps.setString(9,
-             * String.valueOf(tf9.getText())); ps.setString(10,
-             * String.valueOf(ta1.getText())); ps.setString(11,
-             * String.valueOf(tf8.getText())); ps.setString(12,
-             * String.valueOf(c8.getItemAt(c8.getSelectedIndex()))); // ps.setString(13,
-             * String.valueOf(c7)); ps.setString(13, String.valueOf(cd7.getSelectedItem() +
-             * " / " + cm7.getSelectedItem() + " / " + cy7.getSelectedItem())); //
-             * ps.setString(14, String.valueOf(c6.getItemAt(c6.getSelectedIndex())));
-             *
-             * int rs = ps.executeUpdate();
-             */
 
             if (rs > 0) {
                 JOptionPane.showMessageDialog(null, "Student has been registered");
@@ -461,12 +312,5 @@ public class AdmissionFrame {
         }
     }
 
-    // protected int StudentLastEntered(){
-    // // System.out.println(new LastEnteredStudentID());
-    // return (new LastEnteredStudentID()+1);
-    // }
 
-    // public static void main(String[] args) {
-    // new AdmissionFrame("Zorbec");
-    // }
 }

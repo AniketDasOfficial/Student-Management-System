@@ -1,15 +1,10 @@
 import javax.swing.*;
-import javax.swing.plaf.metal.MetalIconFactory;
-
 import net.proteanit.sql.DbUtils;
-
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 public class DisplayStudentFrame {
 
     Font font1 = new Font(Font.MONOSPACED,Font.BOLD,20);
@@ -56,6 +51,15 @@ public class DisplayStudentFrame {
         departmentBox.setBounds(265,130,150,30);
         ok.setBounds(60,230,150,30);
         homeButton.setBounds(265,230,150,30);
+
+        homeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame6.dispose();
+                new MenuFrame(adminName);
+
+            }
+        });
 
         ok.addActionListener(new ActionListener() {
 
@@ -111,7 +115,12 @@ public class DisplayStudentFrame {
         frame7.setLayout(null); //using no layout managers
         frame7.setVisible(true); //making the frame visible
         frame7.setResizable(true);
-        frame7.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame7.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosed(WindowEvent e) {
+                frame7.dispose();
+            }
+        });
 
         DBConnector con = new DBConnector();
         Connection cc = con.connect();
@@ -143,8 +152,4 @@ public class DisplayStudentFrame {
 
     }
 
-//	public static void main(String[] args) {
-//
-//	}
-//
 }

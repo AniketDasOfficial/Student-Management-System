@@ -22,7 +22,6 @@ public class LogInScreen {
 
     LogInScreen(){
 
-//        frame1 = new JFrame();
         frame1.setLayout(null);
 
 
@@ -45,7 +44,6 @@ public class LogInScreen {
         titleLabel.setForeground(new Color(250,250,250));
         userNameLabel.setForeground(new Color(250,250,250));
         passwordLabel.setForeground(new Color(250,250,250));
-//        logInButton.setBackground(new Color(100, 220, 250));
 
 
         titleLabel.setBounds(60,50,200,100);
@@ -61,9 +59,7 @@ public class LogInScreen {
         frame1.add(passwordLabel);
         frame1.add(userNameTF);
         frame1.add(passwordTF);
-//        frame1.add(registerButton);
         frame1.add(logInButton);
-//        frame1.add();
         frame1.getContentPane().setBackground(new Color(100,00,250));
         frame1.setSize(500,400);//400 width and 500 height
         frame1.setLayout(null);//using no layout managers
@@ -95,7 +91,6 @@ public class LogInScreen {
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(sql);
             if (rs.next()){
-//                JOptionPane.showMessageDialog(null,"verified");
                 frame1.dispose();
                 new MenuFrame(String.valueOf(userNameTF.getText()));
 

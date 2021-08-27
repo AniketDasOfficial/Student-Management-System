@@ -21,7 +21,6 @@ public class MenuFrame implements ActionListener {
         name = adminName;
 
         admissionBtn = new JButton("Admission");
-//        passOutUpdateBtn = new Button("Pass-Out Update");
         updateStudentBtn = new JButton("Update Student");
         examDateUpdateBtn = new JButton("Update Exam ");
         showStudentBtn = new JButton("Display Student");
@@ -30,7 +29,6 @@ public class MenuFrame implements ActionListener {
 
         showAdmin.setFont(font1);
         admissionBtn.setFont(font2);
-//        passOutUpdateBtn.setFont(font2);
         updateStudentBtn.setFont(font2);
         examDateUpdateBtn.setFont(font2);
         showStudentBtn.setFont(font2);
@@ -46,7 +44,6 @@ public class MenuFrame implements ActionListener {
 
         showAdmin.setForeground(Color.yellow);
         admissionBtn.setForeground(Color.RED);
-//        passOutUpdateBtn.setForeground(Color.RED);
         updateStudentBtn.setForeground(Color.RED);
         examDateUpdateBtn.setForeground(Color.RED);
         showStudentBtn.setForeground(Color.RED);
@@ -57,7 +54,6 @@ public class MenuFrame implements ActionListener {
         admissionBtn.setBounds(15,100,180,60);
         updateStudentBtn.setBounds(215,100,180,60);
         examDateUpdateBtn.setBounds(415,100,180,60);
-//        passOutUpdateBtn.setBounds(10,60,120,60);
         showStudentBtn.setBounds(80,210,180,60);
         showExamDateBtn.setBounds(290,210,180,60);
         logOutBtn.setBounds(450,300,100,50);
@@ -107,6 +103,7 @@ public class MenuFrame implements ActionListener {
         } else if (e.getSource() == logOutBtn){
             frame2.dispose();
             JOptionPane.showMessageDialog(null,"Logged Out");
+            new LogInScreen();
         }
 
     }

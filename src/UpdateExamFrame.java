@@ -70,7 +70,6 @@ public class UpdateExamFrame {
 
 	    		insertion();
                 new MenuFrame(adminName);
-//                updateExamDate.setText("working");
             }
         });
 
@@ -87,7 +86,6 @@ public class UpdateExamFrame {
         DBConnector con = new DBConnector();
         Connection cc = con.connect();
 
-//		String uId = d;
         String sql = "UPDATE `examination` SET `DateOfExamination`= ? WHERE `DepartmentID`= ?";
         PreparedStatement ps;
         try {
@@ -109,17 +107,5 @@ public class UpdateExamFrame {
             e.printStackTrace();
         }
     }
-
-//    public static void main(String[] args) {
-//        // TODO Auto-generated method stub
-//        new UpdateExamFrame("anirban");
-//
-//    }
-
-//    @Override
-//    public void actionPerformed(ActionEvent e) {
-//        // TODO Auto-generated method stub
-//
-//    }
 
 }
