@@ -1,4 +1,6 @@
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+
 import net.proteanit.sql.DbUtils;
 import java.awt.*;
 import java.awt.event.*;
@@ -102,15 +104,35 @@ public class DisplayStudentFrame {
         frame7.add(frameLabel_1);
         frame7.add(frameLabel_2);
 
-        table = new JTable();
+        DefaultTableModel tableModel = new DefaultTableModel();
 
-        table.setBounds(1, 150, 1550, 2000);
+        table = new JTable(tableModel);
+
+        tableModel.addColumn( "Student ID" );
+        tableModel.addColumn( "Student Name" );
+        tableModel.addColumn( "Gender" );
+        tableModel.addColumn( "Blood Grp" );
+        tableModel.addColumn( "Department" );
+        tableModel.addColumn( "Study Standard" );
+        tableModel.addColumn( "Date of Birth" );
+        tableModel.addColumn( "Guardian Name" );
+        tableModel.addColumn( "Phone Number" );
+        tableModel.addColumn( "Postal Address" );
+        tableModel.addColumn( "Email Address" );
+        tableModel.addColumn( "Religion" );
+        tableModel.addColumn( "Date of Admission" );
+        tableModel.addColumn( "Year of Passout" );
+
+        JScrollPane jScrollPane = new JScrollPane(table);
+
+//        table.setBounds(1,150,1550,2000);
+        jScrollPane.setBounds(1, 150, 1530, 2000);
 
         table.setBackground(Color.cyan);
         
         table.setFont(font4);
 
-        frame7.add(table);
+        frame7.add(jScrollPane);
 
         frame7.setSize(1590,500); //400 width and 500 height
         frame7.getContentPane().setBackground(new Color(107, 0, 255));
