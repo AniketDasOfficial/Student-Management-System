@@ -6,24 +6,15 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class LastEnteredStudentID {
-
-
     ArrayList<Integer> arrl = new ArrayList<Integer>();
-
     protected int verification() {
-
         int l = 0;
-
         if(arrl.size()>1){
             arrl.clear();
         }
-
-
         DBConnector db = new DBConnector();
         Connection con = db.connect();
-
         String sql = "SELECT MAX(StudentID) FROM `student`";
-
         try {
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -34,17 +25,11 @@ public class LastEnteredStudentID {
                     arrl.add(i);
                 }
                 System.out.println(arrl);
-                Object arr[] = arrl.toArray();
-
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return l;
-
     }
-
-
 }
 
