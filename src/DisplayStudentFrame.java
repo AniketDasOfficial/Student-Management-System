@@ -133,5 +133,5 @@ public class DisplayStudentFrame {
         table.getColumnModel().getColumn(6).setPreferredWidth(4);
         table.getColumnModel().getColumn(8).setPreferredWidth(4);
     }
-
 }
+
