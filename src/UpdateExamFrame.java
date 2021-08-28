@@ -16,7 +16,7 @@ public class UpdateExamFrame {
     private JLabel updateExamDate, dateLabel,departmentLabel;
     private JTextField dateField;
     private JComboBox departmentBox;
-    private JButton submit;
+    private JButton submit,returnMenu;
     String[] Option = {"Select","CE","CSE","EE","ECE","IT","ME"};
     JLabel showAdmin;
     String name,department,edate;
@@ -31,6 +31,7 @@ public class UpdateExamFrame {
         dateLabel = new JLabel("Exam Date :");
         dateField = new JTextField();
         submit = new JButton("UPDATE");
+        returnMenu = new JButton("HOME");
 
         showAdmin.setFont(font1);
         showAdmin.setForeground(Color.yellow);
@@ -43,13 +44,15 @@ public class UpdateExamFrame {
         frame3.add(dateLabel);
         frame3.add(dateField);
         frame3.add(submit);
+        frame3.add(returnMenu);
 
         updateExamDate.setBounds(60,50,200,100);
         departmentLabel.setBounds(60,130,150,30);
         departmentBox.setBounds(230,130,150,30);
         dateLabel.setBounds(60,170,150,30);
         dateField.setBounds(230,170,150,30);
-        submit.setBounds(165,230,150,30);
+        submit.setBounds(50,230,150,30);
+        returnMenu.setBounds(250,230,150,30);
 
         updateExamDate.setForeground(new Color(250,250,250));
         departmentLabel.setForeground(new Color(250,250,250));
@@ -60,6 +63,14 @@ public class UpdateExamFrame {
         updateExamDate.setFont(font2);
         departmentLabel.setFont(font3);
         dateLabel.setFont(font3);
+
+        returnMenu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame3.dispose();
+                new MenuFrame(adminName);
+            }
+        });
 
         submit.addActionListener(new ActionListener() {
 

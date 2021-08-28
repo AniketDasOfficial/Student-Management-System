@@ -36,7 +36,7 @@ public class Student {
         jFrame.setVisible(true);
         jFrame.setSize(1590,500);
 
-        jTable.getColumnModel().getColumn(0).setPreferredWidth(1);
+
         jTable.getColumnModel().getColumn(1).setPreferredWidth(8);
         jTable.getColumnModel().getColumn(2).setPreferredWidth(5);
         jTable.getColumnModel().getColumn(3).setPreferredWidth(1);
@@ -65,7 +65,7 @@ public class Student {
 
     }
     public static void main(String[] args) {
-        new  DisplayStudentFrame ("K");
+        new DisplayExamFrame ("Hitick");
     }
 
 }

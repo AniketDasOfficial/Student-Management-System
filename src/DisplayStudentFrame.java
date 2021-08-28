@@ -129,7 +129,7 @@ public class DisplayStudentFrame {
         jScrollPane.setBounds(1, 150, 1530, 2000);
 
         table.setBackground(Color.cyan);
-        
+
         table.setFont(font4);
 
         frame7.add(jScrollPane);
@@ -149,7 +149,7 @@ public class DisplayStudentFrame {
         DBConnector con = new DBConnector();
         Connection cc = con.connect();
 
-        String str = "select * from student where DepartmentId = '"+deptName+"'";
+        String str = "select * from student where departmentID='" + deptName + "'";
         PreparedStatement ps;
 
         try {

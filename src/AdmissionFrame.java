@@ -6,8 +6,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import java.util.ArrayList;
-
 public class AdmissionFrame {
 
 
@@ -28,6 +26,7 @@ public class AdmissionFrame {
         Font h = new Font(Font.DIALOG_INPUT, Font.BOLD, 30);
         l.setBounds(30, -225, 600, 500);
         l.setFont(h);
+        l.setForeground(Color.yellow);
 
         l0 = new JLabel("ENTER STUDENT DETAILS");
         l0.setForeground(new Color(0, 191, 255));
@@ -255,16 +254,9 @@ public class AdmissionFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (e.getSource() == b1) {
-                    // c4 = cd4.getSelectedItem() + " / " + cm4.getSelectedItem() + " / "
-                    // + cy4.getSelectedItem();
-                    // tf1.setText(c4);
-                    // c7 = cd7.getSelectedItem() + " / " + cm7.getSelectedItem() + " / "
-                    // + cy7.getSelectedItem();
-                    // tf1.setText(c7);
                     new MenuFrame(adminName);
                     f1.dispose();
                     insertion();
-                    // new MenuFrame(adminName);
                 }
             }
         });
@@ -279,7 +271,8 @@ public class AdmissionFrame {
         no2 = Integer.parseInt(String.valueOf(c6.getItemAt(c6.getSelectedIndex())));
 
 
-        String sql = " INSERT INTO `student`(`StudentID`, `StudentName`, `StudentGender`, `BloodGrp`, `DepartmentID`, `StudyStandard`, `DOB`, `GuardianName`, `PhoneNumber`, `PostalAddress`, `EmailAddress`, `Religion`, `DateOfAdmission`, `YearOfPassOut`) VALUES ("
+        String sql = " INSERT INTO `student`(`StudentID`, `StudentName`, `StudentGender`, `BloodGrp`, `DepartmentID`, `StudyStandard`, `DOB`," +
+                " `GuardianName`, `PhoneNumber`, `PostalAddress`, `EmailAddress`, `Religion`, `DateOfAdmission`, `YearOfPassOut`) VALUES ("
                 + Integer.parseInt(tf1.getText()) + ", '" + String.valueOf(tf2.getText()) + "', '"
                 + String.valueOf(c1.getItemAt(c1.getSelectedIndex())) + "', '"
                 + String.valueOf(c5.getItemAt(c5.getSelectedIndex())) + "', '"
