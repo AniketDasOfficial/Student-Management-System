@@ -9,12 +9,10 @@ public class DBConnector {
     private static final String USERNAME = "root";
     private static final String PASSWORD = "";
     private static final String MAX_POOL = "250";
-
     // declaring connection object
     private Connection connection;
     // declaring properties object
     private Properties properties;
-
     // create properties
     private Properties getProperties() {
         if (properties == null) {
@@ -25,7 +23,6 @@ public class DBConnector {
         }
         return properties;
     }
-
     // connect database
     public Connection connect() {
         if (connection == null) {
@@ -38,7 +35,6 @@ public class DBConnector {
         }
         return connection;
     }
-
     // disconnect database
     public void disconnect() {
         if (connection != null) {
